@@ -17,9 +17,20 @@ spring:
             non_contextual_creation: true
         id:
           new_generator_mappings: true
+  data:
+    mongodb:
+      uri: ${MONGODB_DATABASE_URL:mongodb://localhost:27017/my-app}
+      auto-index-creation: true
   docker:
     compose:
       lifecycle-management: start-only
+  messages:
+    basename: i18n/messages
+  main:
+    banner-mode: off
+  threads:
+    virtual:
+      enabled: true
 error:
   handling:
     http-status-in-json-response: true

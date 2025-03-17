@@ -36,3 +36,7 @@ build/
 ### MacOs ###
 .DS_Store
 /pom.xml.versionsBackup
+
+### Logging ###
+/logs
+*.log

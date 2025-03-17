@@ -5,10 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-
 @Configuration
-@EntityScan("io.lifeberries.tracing_log_service.domain")
-@EnableJpaRepositories("io.lifeberries.tracing_log_service.repos")
+@EntityScan("io.lifeberries.tracing_log_service.postgres.domain")
+@EnableJpaRepositories("io.lifeberries.tracing_log_service.postgres.repos")
 @EnableTransactionManagement
-public class DomainConfig {
-}
+public class PostgresConfig {}
