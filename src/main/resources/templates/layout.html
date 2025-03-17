@@ -79,6 +79,16 @@
                                 <li class="navbar-item">
                                     <a th:href="@{/}" class="nav-link">[[#{navigation.home}]]</a>
                                 </li>
+                                <li class="navbar-item dropdown">
+                                    <button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="navbarEntitiesLink"
+                                            aria-expanded="false">[[#{navigation.entities}]]</button>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarEntitiesLink">
+                                        <li><a th:href="@{/logs}" class="dropdown-item">[[#{log.list.headline}]]</a></li>
+                                    </ul>
+                                </li>
+                                <li class="navbar-item">
+                                    <a th:href="@{/products}" class="nav-link">Products</a>
+                                </li>
                             </ul>
                         </div>
                     </nav>

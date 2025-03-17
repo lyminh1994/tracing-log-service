@@ -15,7 +15,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 public class TracingLogServiceApplication {
 
   public static void main(final String[] args) {
-    String pid = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
+    var pid = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
     MDC.put("pid", pid);
     MDC.put("serviceName", "OrderService");
 

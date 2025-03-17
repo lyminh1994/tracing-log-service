@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" th:replace="~{layout :: layout(~{::title}, _, _, ~{::body})}">
+    <head>
+        <title>[[#{log.add.headline}]]</title>
+    </head>
+    <body>
+        <div class="d-flex flex-wrap mb-4">
+            <h1 class="flex-grow-1">[[#{log.add.headline}]]</h1>
+            <div>
+                <a th:href="@{/logs}" class="btn btn-secondary">[[#{log.add.back}]]</a>
+            </div>
+        </div>
+
+        <div th:replace="~{fragments/forms::globalErrors('log')}"></div>
+
+        <form th:action="${requestUri}" method="post" novalidate="">
+            <div th:replace="~{fragments/forms::inputRow(object='log', field='level', type='select')}"></div>
+            <div th:replace="~{fragments/forms::inputRow(object='log', field='service')}"></div>
+            <div th:replace="~{fragments/forms::inputRow(object='log', field='request')}"></div>
+            <div th:replace="~{fragments/forms::inputRow(object='log', field='response')}"></div>
+            <input type="submit" th:value="#{log.add.headline}" class="btn btn-primary mt-4" />
+        </form>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" th:replace="~{layout :: layout(~{::title}, _, _, ~{::body})}">
+    <head>
+        <title>[[#{log.list.headline}]]</title>
+    </head>
+    <body>
+        <div class="d-flex flex-wrap mb-4">
+            <h1 class="flex-grow-1">[[#{log.list.headline}]]</h1>
+            <div>
+                <a th:href="@{/logs/add}" class="btn btn-primary ms-2">[[#{log.list.createNew}]]</a>
+            </div>
+        </div>
+
+        <div th:if="${logs.isEmpty()}">[[#{log.list.empty}]]</div>
+        <div th:if="${!logs.isEmpty()}" class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">[[#{log.id.label}]]</th>
+                        <th scope="col">[[#{log.level.label}]]</th>
+                        <th scope="col">[[#{log.service.label}]]</th>
+                        <th scope="col">[[#{log.request.label}]]</th>
+                        <th scope="col">[[#{log.response.label}]]</th>
+                        <th><!-- --></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="log : ${logs}">
+                        <td>[[${log.id}]]</td>
+                        <td>[[${log.level}]]</td>
+                        <td>[[${log.service}]]</td>
+                        <td>[[${log.request}]]</td>
+                        <td>[[${log.response}]]</td>
+                        <td>
+                            <div class="float-end text-nowrap">
+                                <a th:href="@{/logs/edit/{id}(id=${log.id})}" class="btn btn-sm btn-secondary">[[#{log.list.edit}]]</a>
+                                <form th:action="@{/logs/delete/{id}(id=${log.id})}" th:hx-confirm="#{delete.confirm}" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-secondary">[[#{log.list.delete}]]</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
