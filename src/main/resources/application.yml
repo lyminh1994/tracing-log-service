@@ -1,8 +1,7 @@
 spring:
+  profiles:
+    active: local
   datasource:
-    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/tracing-log-service}
-    username: ${JDBC_DATABASE_USERNAME:postgres}
-    password: ${JDBC_DATABASE_PASSWORD:<<YOUR_PASSWORD>>}
     hikari:
       connection-timeout: 30000
       maximum-pool-size: 10
@@ -19,7 +18,6 @@ spring:
           new_generator_mappings: true
   data:
     mongodb:
-      uri: ${MONGODB_DATABASE_URL:mongodb://localhost:27017/my-app}
       auto-index-creation: true
   docker:
     compose:

@@ -33,9 +33,9 @@
                         <td>[[${log.response}]]</td>
                         <td>
                             <div class="float-end text-nowrap">
-                                <a th:href="@{/logs/edit/{id}(id=${log.id})}" class="btn btn-sm btn-secondary">[[#{log.list.edit}]]</a>
+                                <a th:href="@{/logs/edit/{id}(id=${log.id})}" class="btn btn-sm btn-info">[[#{log.list.edit}]]</a>
                                 <form th:action="@{/logs/delete/{id}(id=${log.id})}" th:hx-confirm="#{delete.confirm}" method="post" class="d-inline">
-                                    <button type="submit" class="btn btn-sm btn-secondary">[[#{log.list.delete}]]</button>
+                                    <button type="submit" class="btn btn-sm btn-danger">[[#{log.list.delete}]]</button>
                                 </form>
                             </div>
                         </td>
