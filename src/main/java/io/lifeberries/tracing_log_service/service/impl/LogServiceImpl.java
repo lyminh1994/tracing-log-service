@@ -1,9 +1,8 @@
 package io.lifeberries.tracing_log_service.service.impl;
 
-import io.lifeberries.tracing_log_service.mapper.LogMapper;
 import io.lifeberries.tracing_log_service.dto.LogDTO;
 import io.lifeberries.tracing_log_service.exception.NotFoundException;
-import io.lifeberries.tracing_log_service.mongo.domain.Log;
+import io.lifeberries.tracing_log_service.mapper.LogMapper;
 import io.lifeberries.tracing_log_service.mongo.repos.LogRepository;
 import io.lifeberries.tracing_log_service.service.LogService;
 import java.util.List;

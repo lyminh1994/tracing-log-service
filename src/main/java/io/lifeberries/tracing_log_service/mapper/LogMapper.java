@@ -21,6 +21,7 @@ public interface LogMapper {
   @Mapping(target = "dateCreated", ignore = true)
   Log toLog(LogDTO logDTO);
 
+  @Mapping(target = "id", ignore = true)
   @Mapping(target = "version", ignore = true)
   @Mapping(target = "lastUpdated", ignore = true)
   @Mapping(target = "dateCreated", ignore = true)
