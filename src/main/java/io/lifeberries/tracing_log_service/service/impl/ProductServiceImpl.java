@@ -1,7 +1,7 @@
 package io.lifeberries.tracing_log_service.service.impl;
 
 import io.lifeberries.tracing_log_service.dto.ProductDto;
-import io.lifeberries.tracing_log_service.postgres.repos.ProductRepository;
+import io.lifeberries.tracing_log_service.repos.ProductRepository;
 import io.lifeberries.tracing_log_service.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

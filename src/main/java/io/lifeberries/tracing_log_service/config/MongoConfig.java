@@ -2,12 +2,9 @@ package io.lifeberries.tracing_log_service.config;
 
 import io.lifeberries.tracing_log_service.mongo.util.MongoOffsetDateTimeReader;
 import io.lifeberries.tracing_log_service.mongo.util.MongoOffsetDateTimeWriter;
-import java.time.OffsetDateTime;
 import java.util.Arrays;
-import java.util.Optional;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.auditing.DateTimeProvider;
 import org.springframework.data.mongodb.MongoDatabaseFactory;
 import org.springframework.data.mongodb.MongoTransactionManager;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
@@ -24,11 +21,6 @@ public class MongoConfig {
   @Bean
   public MongoTransactionManager transactionManager(final MongoDatabaseFactory databaseFactory) {
     return new MongoTransactionManager(databaseFactory);
-  }
-
-  @Bean(name = "auditingDateTimeProvider")
-  public DateTimeProvider dateTimeProvider() {
-    return () -> Optional.of(OffsetDateTime.now());
   }
 
   @Bean

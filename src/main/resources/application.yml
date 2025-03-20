@@ -1,13 +1,13 @@
 spring:
   profiles:
-    active: local
+    active: mysql
   datasource:
     hikari:
       connection-timeout: 30000
       maximum-pool-size: 10
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: none
     open-in-view: false
     properties:
       hibernate:
@@ -19,6 +19,7 @@ spring:
   data:
     mongodb:
       auto-index-creation: true
+      uri: ${MONGODB_DATABASE_URL:mongodb://localhost:27017/my-app}
   docker:
     compose:
       lifecycle-management: start-only

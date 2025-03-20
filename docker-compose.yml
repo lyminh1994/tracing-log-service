@@ -7,6 +7,13 @@ services:
     - POSTGRES_PASSWORD=P4ssword!
     ports:
     - "5433:5432"
+  mysql:
+    image: mysql:9.2
+    environment:
+      - MYSQL_DATABASE=my-app
+      - MYSQL_ROOT_PASSWORD=P4ssword!
+    ports:
+      - "3307:3306"
   mongodb:
     image: mongo:latest
     environment:

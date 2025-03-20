@@ -2,6 +2,7 @@ package io.lifeberries.tracing_log_service.rest;
 
 import io.lifeberries.tracing_log_service.dto.LogDTO;
 import io.lifeberries.tracing_log_service.service.LogService;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
 import java.util.List;
 import java.util.UUID;
@@ -36,6 +37,7 @@ public class LogsResource {
   }
 
   @PostMapping
+  @ApiResponse(responseCode = "201")
   public ResponseEntity<UUID> createLog(@RequestBody @Valid final LogDTO logDTO) {
     final var createdId = logService.create(logDTO);
     return new ResponseEntity<>(createdId, HttpStatus.CREATED);
@@ -49,6 +51,7 @@ public class LogsResource {
   }
 
   @DeleteMapping("/{id}")
+  @ApiResponse(responseCode = "204")
   public ResponseEntity<Void> deleteLog(@PathVariable(name = "id") final UUID id) {
     logService.delete(id);
     return ResponseEntity.noContent().build();
