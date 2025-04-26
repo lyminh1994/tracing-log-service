@@ -22,7 +22,7 @@ spring:
       uri: ${MONGODB_DATABASE_URL:mongodb://localhost:27017/my-app}
   docker:
     compose:
-      lifecycle-management: start-only
+      lifecycle-management: start_only
   messages:
     basename: i18n/messages
   main:
